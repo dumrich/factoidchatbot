@@ -6,7 +6,7 @@ import { ThemeContext } from './ThemeContext'; // Import ThemeContext
 
 const fetchChatCompletion = async (userInput) => {
     const OPENAI_API_KEY = process.env.SECRET_KEY; // Store API key securely
-  
+    console.log(OPENAI_API_KEY);
     try {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
