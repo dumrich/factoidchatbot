@@ -5,14 +5,14 @@ import './ChatWindow.css'; // Make sure to have this CSS file
 import { ThemeContext } from './ThemeContext'; // Import ThemeContext
 
 const fetchChatCompletion = async (userInput) => {
-    const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY; // Store API key securely
+    const OPENAI_API_KEY = process.env.SECRET_KEY; // Store API key securely
   
     try {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer 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`
+          'Authorization': `Bearer ${OPENAI_API_KEY}`
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",
